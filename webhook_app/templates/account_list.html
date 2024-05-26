@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account List</title>
+</head>
+<body>
+    <h1>Account List</h1>
+    <a href="{% url 'account-create' %}">Create New Account</a>
+    <ul>
+        {% for account in accounts %}
+            <li>
+                {{ account.account_name }} ({{ account.email }})
+                <a href="{% url 'account-update' account.pk %}">Update Account</a>
+                <a href="{% url 'account-delete' account.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

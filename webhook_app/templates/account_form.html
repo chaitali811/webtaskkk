@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Form</title>
+</head>
+<body>
+    <h1>Account Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'account-list' %}">Back to Account List</a>
+</body>
+</html>

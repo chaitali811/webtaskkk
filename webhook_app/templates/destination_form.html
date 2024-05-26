@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Destination Form</title>
+</head>
+<body>
+    <h1>Destination Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'destination-list' %}">Back to Destination List</a>
+</body>
+</html>
